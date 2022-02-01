@@ -1,0 +1,32 @@
+// A C program to move all zeroes at the end of array
+#include <stdio.h>
+
+// Function which pushes all zeros to end of an array.
+void pushZerosToEnd(int arr[], int n)
+{
+	int count = {0}; // Count of non-zero elements
+
+	
+	for (int i = 0; i < n; i++)
+		if (arr[i] != 0)
+			arr[count++] = arr[i]; // here count is
+								// incremented
+
+	
+	while (count < n)
+		arr[count++] = 0;
+}
+
+int main()
+{
+	int arr[10] ;
+	int n = sizeof(arr) / sizeof(arr[0]);
+	printf("Enter any 10 numbers : ");
+	for (int i = 0; i < n; i++)
+	scanf("%d ", &arr[i]);
+	pushZerosToEnd(arr, n);
+	printf("%s\n", "Array after pushing all zeros to end of array:");
+	for (int i = 0; i < n; i++)
+	printf("%d ", arr[i]);
+	return 0;
+}
